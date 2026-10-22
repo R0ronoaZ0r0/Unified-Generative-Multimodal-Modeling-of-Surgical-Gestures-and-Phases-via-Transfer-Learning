@@ -1,0 +1,20 @@
+# Deep learning
+torch
+torchvision
+transformers
+
+# Data processing and evaluation
+numpy
+pandas
+scikit-learn
+opencv-python
+Pillow
+tqdm
+
+# Plotting
+matplotlib
+seaborn
+
+# Configuration and running the notebooks
+pyyaml
+jupyter

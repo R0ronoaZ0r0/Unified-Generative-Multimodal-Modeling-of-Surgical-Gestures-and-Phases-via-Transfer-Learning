@@ -1,0 +1,50 @@
+# Shared configuration for all notebooks.
+# Every notebook finds this file by walking up from its working directory,
+# so notebooks can be run from anywhere inside the repository.
+
+# All paths are relative to the repository root.
+paths:
+  # Raw JIGSAWS dataset, laid out as <task>/video/*.avi,
+  # <task>/transcriptions/*.txt and <task>/meta_file_<task>.txt
+  dataset_dir: datasets/jigsaws
+  # Preprocessed features: jigsaws_{full_processed,train,test}_<task>.npz
+  features_dir: outputs/features
+  # Trained model weights
+  models_dir: outputs/models
+  # Per-epoch training metrics (CSV)
+  training_records_dir: outputs/training_records
+  # Final test metrics (CSV)
+  results_dir: outputs/results
+  # Figures created by notebooks/utils
+  images_dir: outputs/figures
+  # Executed copies of the notebooks run by run_pipeline.py, one subfolder per task
+  executed_notebooks_dir: outputs/executed_notebooks
+
+# JIGSAWS task the notebooks preprocess and train on: Suturing, Needle_Passing or Knot_Tying
+task: Suturing
+
+# auto picks cuda, then mps (Apple Silicon), then cpu
+device: auto
+
+data:
+  frame_skip: 5        # sample every 5th video frame
+  seq_len: 5           # frames per sequence
+  train_split: 0.8     # train/test split ratio
+  language_model: bert-base-uncased
+
+model:
+  num_surgeons: 8
+  gesture_vocab_size: 16   # 15 gestures + 1 mask
+  phase_vocab_size: 7      # 6 phases + 1 mask
+  num_grs_components: 6
+  hidden_dim: 2048
+  vision_dim: 1000         # ResNet-18 output
+  lang_dim: 768            # BERT CLS embedding
+  num_timesteps: 10        # diffusion steps
+
+training:
+  epochs: 25
+  batch_size: 32
+  lr: 0.0001
+  seed: 42
+  grs_loss_weight: 1       # weight of the GRS loss in grs_train.ipynb

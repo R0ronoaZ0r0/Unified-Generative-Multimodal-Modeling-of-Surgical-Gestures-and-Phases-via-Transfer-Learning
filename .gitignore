@@ -1,59 +1,17 @@
+# JIGSAWS dataset (download separately, see README)
 datasets/
-.DS_Store
-models/
-features/
-features_linux/
-presentations.zip
-surgical_venv/
-Surgeon_style_fingerprinting_phase.zip
-Surgeon_style_fingerprinting_gesture/
-Surgeon_style_fingerprinting/
-Surgeon_style_fingerprinting_phase/
-Surgeon_style_fingerprinting-main.zip
-Surgeon_style_fingerprinting-main/
+
+# Generated features, models, training records, results and figures
+outputs/
+
+# Python
 __pycache__/
-reports/*
-!*.tex
-!*.pdf
-*.ipynb
-!notebooks/*.ipynb
-!notebooks/*/*.ipynb
-notebooks/stroke_rehab/preliminary_findings.fdb_latexmk
-notebooks/stroke_rehab/preliminary_findings.log
-notebooks/stroke_rehab/preliminary_findings.synctex.gz
-notebooks/stroke_rehab/preliminary_findings.aux
-notebooks/stroke_rehab/preliminary_findings.fls
-tmp/pdfs/preliminary_findings.aux
-.gitignore
-tmp/pdfs/preliminary_findings.log
-nminbre_poster/main.aux
-nminbre_poster/main.fdb_latexmk
-nminbre_poster/main.fls
-nminbre_poster/main.log
-nminbre_poster/main.synctex.gz
+*.py[cod]
+.venv/
+venv/
 
+# Jupyter
+.ipynb_checkpoints/
 
-
-cache/
-huggingface_cache/
-matplotlib_cache/
-
-qwen08_crossval_counting/
-qwen08_crossval_counting.zip
-qwen08_multiseed_counting/
-qwen08_multiseed_counting.zip
-qwen08_ceiling_counting/
-qwen08_ceiling_counting.zip
-notebooks/stroke_rehab/stat_analysis_report_tables_multiseed/
-notebooks/stroke_rehab/stat_analysis_report_tables_ceiling/
-stroke-qwen-multiseed-*.out
-stroke-qwen-multiseed-*.err
-stroke-qwen-ceiling-*.out
-stroke-qwen-ceiling-*.err
-notebooks/stroke_rehab/cval/outputs/seeds/
-
-*.zip
-colab/*
-csgpu/*
-qwen_parallel/
-qwen_v2_parallel/
+# OS
+.DS_Store
